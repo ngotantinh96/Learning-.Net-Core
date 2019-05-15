@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RazorPagesMovie.Models;
+using System.Threading.Tasks;
 
 namespace RazorPagesMovie.Pages.Movies
 {
     public class DeleteModel : PageModel
     {
-        private readonly RazorPagesMovie.Models.RazorPagesMovieContext _context;
+        private readonly RazorPagesMovieContext _context;
 
-        public DeleteModel(RazorPagesMovie.Models.RazorPagesMovieContext context)
+        public DeleteModel(RazorPagesMovieContext context)
         {
             _context = context;
         }
@@ -25,10 +22,12 @@ namespace RazorPagesMovie.Pages.Movies
         {
             if (id == null)
             {
-                return NotFound();
+                Movie = await _context.Movie.FirstOrDefaultAsync();
             }
-
-            Movie = await _context.Movie.FirstOrDefaultAsync(m => m.ID == id);
+            else
+            {
+                Movie = await _context.Movie.FirstOrDefaultAsync(m => m.ID == id);
+            }
 
             if (Movie == null)
             {
