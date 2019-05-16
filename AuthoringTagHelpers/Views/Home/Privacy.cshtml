@@ -1,15 +1,10 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿@model AuthoringTagHelpers.Models.WebsiteContext
+@{
+    ViewData["Title"] = "About";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
 <address>
     <strong>Support:</strong><email>Support</email><br />
@@ -18,3 +13,7 @@
 
 <p bold>Use this area to provide additional information.</p>
 <bold> Is this bold?</bold>
+
+
+<h3> web site info </h3>
+<website-information info="Model" />
