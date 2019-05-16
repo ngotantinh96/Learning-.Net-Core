@@ -7,11 +7,11 @@ using ViewComponentSample.Models;
 
 namespace ViewComponentSample.ViewComponents
 {
-    public class PriorityListViewComponent : ViewComponent
+    public class PriorityList : ViewComponent
     {
         private readonly ToDoContext db;
 
-        public PriorityListViewComponent(ToDoContext context)
+        public PriorityList(ToDoContext context)
         {
             db = context;
         }
