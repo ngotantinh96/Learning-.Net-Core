@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthoringTagHelpers", "Auth
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarterViewComp", "StarterViewComp\StarterViewComp.csproj", "{CE106DA1-FAA4-4E30-942C-D0ABDD64ECCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApi", "TodoApi\TodoApi.csproj", "{51E99BD8-E4B2-4471-AE54-4ABBFBD34E7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CE106DA1-FAA4-4E30-942C-D0ABDD64ECCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE106DA1-FAA4-4E30-942C-D0ABDD64ECCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE106DA1-FAA4-4E30-942C-D0ABDD64ECCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51E99BD8-E4B2-4471-AE54-4ABBFBD34E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E99BD8-E4B2-4471-AE54-4ABBFBD34E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E99BD8-E4B2-4471-AE54-4ABBFBD34E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E99BD8-E4B2-4471-AE54-4ABBFBD34E7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
