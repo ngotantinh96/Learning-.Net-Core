@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPagesMovie", "RazorPag
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{799ED3DE-75A3-4DF3-8B8F-CD05871A9221}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthoringTagHelpers", "AuthoringTagHelpers\AuthoringTagHelpers.csproj", "{1BA652EB-DDEE-4083-9F2D-0E0D43CFE357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthoringTagHelpers", "AuthoringTagHelpers\AuthoringTagHelpers.csproj", "{1BA652EB-DDEE-4083-9F2D-0E0D43CFE357}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarterViewComp", "StarterViewComp\StarterViewComp.csproj", "{CE106DA1-FAA4-4E30-942C-D0ABDD64ECCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApi", "TodoApi\TodoApi.csproj", "{51E99BD8-E4B2-4471-AE54-4ABBFBD34E7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApi", "TodoApi\TodoApi.csproj", "{51E99BD8-E4B2-4471-AE54-4ABBFBD34E7F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swashbuckle", "Swashbuckle\Swashbuckle.csproj", "{AFA4659C-0212-4476-90B2-83CE6849B494}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{51E99BD8-E4B2-4471-AE54-4ABBFBD34E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51E99BD8-E4B2-4471-AE54-4ABBFBD34E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51E99BD8-E4B2-4471-AE54-4ABBFBD34E7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFA4659C-0212-4476-90B2-83CE6849B494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFA4659C-0212-4476-90B2-83CE6849B494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFA4659C-0212-4476-90B2-83CE6849B494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFA4659C-0212-4476-90B2-83CE6849B494}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
