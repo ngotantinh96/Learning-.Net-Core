@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,9 @@ namespace TodoApi.Controllers
 
         // GET: api/Todo/5
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<ActionResult<TodoItem>> GetTodoItem(long id)
         {
             var todoItem = await _context.TodoItems.FindAsync(id);
@@ -49,6 +53,8 @@ namespace TodoApi.Controllers
 
         // POST: api/Todo
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesDefaultResponseType]
         public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem item)
         {
             _context.TodoItems.Add(item);
@@ -59,6 +65,9 @@ namespace TodoApi.Controllers
 
         // PUT: api/Todo/5
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> PutTodoItem(long id, TodoItem item)
         {
             if (id != item.Id)
@@ -74,6 +83,9 @@ namespace TodoApi.Controllers
 
         // DELETE: api/Todo/5
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {
             var todoItem = await _context.TodoItems.FindAsync(id);
