@@ -47,8 +47,27 @@ namespace TodoApi.Controllers
             return todoItem;
         }
 
-        // POST: api/Todo
+        /// <summary>
+        /// Creates a TodoItem.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "id": 1,
+        ///        "name": "Item1",
+        ///        "isComplete": true
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="item"></param>
+        /// <returns>A newly created TodoItem</returns>
+        /// <response code="201">Returns the newly created item</response>
+        /// <response code="400">If the item is null</response>            
         [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
         public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem item)
         {
             _context.TodoItems.Add(item);
@@ -72,7 +91,10 @@ namespace TodoApi.Controllers
             return NoContent();
         }
 
-        // DELETE: api/Todo/5
+        /// <summary>
+        /// Deletes a specific TodoItem.
+        /// </summary>
+        /// <param name="id"></param>  
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {
