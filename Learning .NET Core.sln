@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swashbuckle", "Swashbuckle\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NSwag", "NSwag\NSwag.csproj", "{B970EC82-6C82-4535-9627-63B9D501E616}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdeToFood", "OdeToFood\OdeToFood.csproj", "{21CEF140-2304-4D36-A0F0-B9B9F7C0ABE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{B970EC82-6C82-4535-9627-63B9D501E616}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B970EC82-6C82-4535-9627-63B9D501E616}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B970EC82-6C82-4535-9627-63B9D501E616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21CEF140-2304-4D36-A0F0-B9B9F7C0ABE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21CEF140-2304-4D36-A0F0-B9B9F7C0ABE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21CEF140-2304-4D36-A0F0-B9B9F7C0ABE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21CEF140-2304-4D36-A0F0-B9B9F7C0ABE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
