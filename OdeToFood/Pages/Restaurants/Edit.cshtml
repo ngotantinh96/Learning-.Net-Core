@@ -1,11 +1,10 @@
-﻿@page "{restaurantId:int}"
+﻿@page "{restaurantId:int?}"
 @model OdeToFood.Pages.Restaurants.EditModel
 @{
     ViewData["Title"] = "Edit";
 }
 
 <h1>Editting @Model.Restaurant.Name</h1>
-
 <form method="post">
     <input type="hidden" asp-for="Restaurant.Id" />
     <div class="form-group">
