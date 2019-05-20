@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using OdeToFoo.Data;
 using OdeToFood.Core;
@@ -13,6 +14,8 @@ namespace OdeToFood.Pages.Restaurants
 
         public string Message { get; set; }
         public IEnumerable<Restaurant> Restaurants { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
 
         public ListModel(
             IConfiguration configuration,
@@ -22,10 +25,10 @@ namespace OdeToFood.Pages.Restaurants
             this.restaurantData = restaurantData;
         }
 
-        public void OnGet(string searchTerm)
+        public void OnGet()
         {
             Message = configuration["Message"];
-            Restaurants = restaurantData.GetRestaurantsByName(searchTerm);
+            Restaurants = restaurantData.GetRestaurantsByName(SearchTerm);
         }
     }
 }
