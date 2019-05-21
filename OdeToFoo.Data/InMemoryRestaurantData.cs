@@ -46,6 +46,11 @@ namespace OdeToFoo.Data
             return restaurants.SingleOrDefault(r => r.Id == id);
         }
 
+        public int GetCountOfRestaurants()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = "")
         {
             return restaurants.Where(r => string.IsNullOrEmpty(name) || r.Name.StartsWith(name))

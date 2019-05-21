@@ -16,7 +16,7 @@
 </form>
 
 <a class="btn btn-success" asp-page="./Edit">Add New</a>
-
+<hr />
 @foreach (var restaurant in Model.Restaurants)
 {
     <partial name="_Summary" model="restaurant" />
