@@ -48,7 +48,7 @@ namespace OdeToFoo.Data
 
         public int GetCountOfRestaurants()
         {
-            throw new System.NotImplementedException();
+            return restaurants.Count();
         }
 
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = "")
