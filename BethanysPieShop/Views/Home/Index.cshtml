@@ -1,4 +1,4 @@
-﻿@model BethanysPieShop.ViewModels.HomeViewModel
+﻿@model HomeViewModel
 
 <div class="col-12"><h2>@Model.Title</h2></div>
 
@@ -9,9 +9,9 @@
             <img class="card-img-top" src="@pie.ImageThumbnailUrl" alt="" />
             <div class="card-body">
                 <div class="caption">
-                    <h3 class="float-right card-tex">@pie.Price.ToString("c")</h3>
-                    <h3 class="card-title">@pie.Name</h3>
-                    <p class="card-tex">@pie.ShortDescription</p>
+                    <h3 class="float-right card-text">@pie.Price.ToString("c")</h3>
+                    <h3 class="card-title"><a asp-controller="Home" asp-action="Details" asp-route-id="@pie.Id">@pie.Name</a></h3>
+                    <p class="card-text">@pie.ShortDescription</p>
                 </div>
             </div>
         </div>
