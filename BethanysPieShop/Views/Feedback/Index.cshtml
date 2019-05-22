@@ -1,0 +1,35 @@
+﻿@model Feedback
+
+@{
+    ViewData["Title"] = "Feedback";
+}
+
+<h1>Feedback</h1>
+
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label asp-for="Name" class="col-md-2"></label>
+        <div class="col-md-5">
+            <input asp-for="Name" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="col-md-2"></label>
+        <div class="col-md-5">
+            <input asp-for="Email" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Message" class="col-md-2"></label>
+        <div class="col-md-5">
+            <textarea asp-for="Message" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="ContactMe" class="col-md-2"></label>
+        <div class="col-md-5">
+            <input type="checkbox" asp-for="ContactMe" class="form-control" />
+        </div>
+    </div>
+</form>
+

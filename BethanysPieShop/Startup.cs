@@ -25,6 +25,7 @@ namespace BethanysPieShop
             });
 
             services.AddTransient<IPieRepository, PieRepository>();
+            services.AddTransient<IFeedbackRepository, FeedbackRepository>();
 
             services.AddMvc();
         }
