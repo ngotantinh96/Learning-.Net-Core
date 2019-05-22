@@ -4,10 +4,16 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        @RenderBody()
+    <div class="container body-content">
+        <div class="row">
+            @RenderBody()
+        </div>
     </div>
+    <script src="~/lib/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>
