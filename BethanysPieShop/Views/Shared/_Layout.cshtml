@@ -21,6 +21,7 @@
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Feedback" asp-action="Index">Feedback</a>
                 </li>
+                <partial name="_LoginPartial" />
             </ul>
         </div>
     </nav>
@@ -31,5 +32,6 @@
     </div>
     <script src="~/lib/jQuery/jquery-3.4.1.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
