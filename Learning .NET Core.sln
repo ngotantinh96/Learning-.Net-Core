@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TennisBookings.Web", "Tenni
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TennisBookings.Web.Tests", "TennisBookings.Web.Tests\TennisBookings.Web.Tests.csproj", "{032E6CAE-0867-4D27-B408-35D922527CA1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LifetimeDemonstration.Web", "LifetimeDemonstration.Web\LifetimeDemonstration.Web.csproj", "{86E0062E-5576-4CDC-9709-EFCECA7F5F30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{032E6CAE-0867-4D27-B408-35D922527CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{032E6CAE-0867-4D27-B408-35D922527CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{032E6CAE-0867-4D27-B408-35D922527CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E0062E-5576-4CDC-9709-EFCECA7F5F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E0062E-5576-4CDC-9709-EFCECA7F5F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E0062E-5576-4CDC-9709-EFCECA7F5F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E0062E-5576-4CDC-9709-EFCECA7F5F30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
