@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Moq;
 using TennisBookings.Web.Controllers;
+using TennisBookings.Web.Services;
 using TennisBookings.Web.ViewModels;
 using Xunit;
 
@@ -10,7 +12,13 @@ namespace TennisBookings.Web.Tests.Controllers
         [Fact]
         public void ReturnsExpectedViewModel_WhenWeatherIsSun()
         {
-            var sut = new HomeController();
+            var mockWeatherForecaster = new Mock<IWeatherForecaster>();
+            mockWeatherForecaster.Setup(w => w.GetCurrentWeather()).Returns(new WeatherResult
+            {
+                WeatherCondition = WeatherCondition.Sun
+            });
+            ;
+            var sut = new HomeController(mockWeatherForecaster.Object);
 
             var result = sut.Index();
 
@@ -22,7 +30,13 @@ namespace TennisBookings.Web.Tests.Controllers
         [Fact]
         public void ReturnsExpectedViewModel_WhenWeatherIsRain()
         {
-            var sut = new HomeController();
+            var mockWeatherForecaster = new Mock<IWeatherForecaster>();
+            mockWeatherForecaster.Setup(w => w.GetCurrentWeather()).Returns(new WeatherResult
+            {
+                WeatherCondition = WeatherCondition.Rain
+            });
+            ;
+            var sut = new HomeController(mockWeatherForecaster.Object);
 
             var result = sut.Index();
 

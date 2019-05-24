@@ -6,14 +6,18 @@ namespace TennisBookings.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IWeatherForecaster weatherForecaster;
+
+        public HomeController(IWeatherForecaster weatherForecaster)
+        {
+            this.weatherForecaster = weatherForecaster;
+        }
         [Route("")]
         public IActionResult Index()
         {
             var viewModel = new HomeViewModel();
-
-            var weatherForecaster = new WeatherForecaster();
             var currentWeather = weatherForecaster.GetCurrentWeather();
-            
+
             switch (currentWeather.WeatherCondition)
             {
                 case WeatherCondition.Sun:
