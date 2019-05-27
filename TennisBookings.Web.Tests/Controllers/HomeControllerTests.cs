@@ -31,7 +31,7 @@ namespace TennisBookings.Web.Tests.Controllers
         public void ReturnsExpectedViewModel_WhenWeatherIsRain()
         {
             var mockWeatherForecaster = new Mock<IWeatherForecaster>();
-            mockWeatherForecaster.Setup(w => w.GetCurrentWeather()).Returns(new WeatherResult
+            mockWeatherForecaster.Setup(w => w.GetCurrentWeatherAsync()).Returns(new WeatherResult
             {
                 WeatherCondition = WeatherCondition.Rain
             });
