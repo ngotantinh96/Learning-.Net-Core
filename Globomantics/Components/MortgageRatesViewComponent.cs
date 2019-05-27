@@ -1,12 +1,15 @@
 ﻿using Globomantics.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Globomantics.Components
 {
     public class MortgageRatesViewComponent : ViewComponent
     {
-        private readonly IRateService rateService;
+        private IRateService rateService;
 
         public MortgageRatesViewComponent(IRateService rateService)
         {

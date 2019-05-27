@@ -1,18 +1,34 @@
-﻿using Globomantics.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Globomantics.Models;
+using Globomantics.Services;
+using Globomantics.Core.Models;
 
 namespace Globomantics.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController()
+        private IRateService rateService;
+
+        public HomeController(IRateService rateService)
         {
+            this.rateService = rateService;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var home = new HomeVM()
+            {
+                MortgageRates = rateService.GetMortgageRates(),
+                CDRates = rateService.GetCDRates(),
+                CreditCardRates = rateService.GetCreditCardRates()
+            };
+
+            return View(home);
         }
 
         public IActionResult About()

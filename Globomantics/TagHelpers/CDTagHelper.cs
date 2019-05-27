@@ -1,6 +1,12 @@
 ﻿using Globomantics.Core.Models;
 using Globomantics.Services;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using static Globomantics.Services.RateService;
 
 namespace Globomantics
 {
@@ -13,7 +19,7 @@ namespace Globomantics
 
         public CDTermLength TermLength { get; set; }
 
-        private readonly IRateService rateService;
+        private IRateService rateService;
 
         public CDRateTagHelper(IRateService rateService)
         {

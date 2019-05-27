@@ -1,16 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Globomantics.Core.Models;
 using Microsoft.AspNetCore.Mvc;
-using Globomantics.Models;
-using Globomantics.Core.Models;
+using Microsoft.Extensions.Logging;
 
 namespace Globomantics.Controllers
 {
     public class InsuranceController : Controller
     {
+        private ILogger<InsuranceController> logger;
+
+        public InsuranceController(ILogger<InsuranceController> logger)
+        {
+            this.logger = logger;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -19,7 +21,7 @@ namespace Globomantics.Controllers
         [HttpPost]
         public IActionResult Index(Contact contact)
         {
-            return View();
+            return RedirectToAction("Confirmation");
         }
 
         public IActionResult Confirmation()
