@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Globomantics.Filters;
 using Globomantics.Models;
 using Globomantics.Services;
-using Microsoft.AspNetCore.Session;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Globomantics.Controllers
 {
+    [TypeFilter(typeof(FeatureAuthFilter),
+        Arguments = new object[] { "Loan" })]
     public class LoanController : Controller
     {
         private ILoanService loanService;
@@ -29,6 +26,7 @@ namespace Globomantics.Controllers
         public IActionResult Application(LoanDetails app)
         {
             loanService.CreateLoanApplication(app, Guid.NewGuid().ToString());
+
             return RedirectToAction("Employment");
         }
 

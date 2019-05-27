@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace Globomantics.Services
 {
@@ -19,14 +16,14 @@ namespace Globomantics.Services
             this._hostingEnvironment = environment;
             var path = Path.Combine(_hostingEnvironment.WebRootPath, "features.json");
 
-            this.featureStates = 
+            this.featureStates =
                 JsonConvert.DeserializeObject<Dictionary<string, bool>>
                 (File.ReadAllText(path));
         }
 
         public bool IsFeatureActive(string featureName)
         {
-            return featureStates.FirstOrDefault(x => x.Key == featureName).Value;
+            return featureStates[featureName];
         }
     }
 }

@@ -1,10 +1,16 @@
-﻿using Globomantics.Models;
-using Globomantics.Services;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Globomantics.Models;
+using Globomantics.Services;
 using Microsoft.Extensions.Logging;
 
 namespace Globomantics.Controllers
 {
+    
     public class AutoController : Controller
     {
         private ILogger<AutoController> logger;

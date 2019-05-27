@@ -1,5 +1,11 @@
-﻿using Globomantics.Core.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Globomantics.Models;
+using Globomantics.Core.Models;
 using Microsoft.Extensions.Logging;
 
 namespace Globomantics.Controllers
@@ -21,7 +27,16 @@ namespace Globomantics.Controllers
         [HttpPost]
         public IActionResult Index(Contact contact)
         {
-            return RedirectToAction("Confirmation");
+            if (ModelState.IsValid)
+            {
+                // Todo: Send contact message
+                return RedirectToAction("Confirmation");
+            }
+            else
+            {
+                logger.LogInformation("Bad model", contact);
+                return View(contact);
+            }
         }
 
         public IActionResult Confirmation()

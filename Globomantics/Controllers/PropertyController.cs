@@ -1,6 +1,11 @@
-﻿using Globomantics.Models;
-using Globomantics.Services;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Globomantics.Models;
+using Globomantics.Services;
 using Microsoft.Extensions.Logging;
 
 namespace Globomantics.Controllers
@@ -24,8 +29,16 @@ namespace Globomantics.Controllers
         [HttpPost]
         public IActionResult Quote(PropertyQuote quote)
         {
-            quoteService.GeneratePropertyQuote(quote);
-            return RedirectToAction("Insurance", "Confirmation");
+            if (ModelState.IsValid)
+            {
+                quoteService.GeneratePropertyQuote(quote);
+                return RedirectToAction("Insurance", "Confirmation");
+            }
+            else
+            {
+                logger.LogInformation("Bad model", quote);
+                return View(quote);
+            }
         }
     }
 }
