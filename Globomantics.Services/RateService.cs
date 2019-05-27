@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Globomantics.Services
 {
@@ -43,5 +42,9 @@ namespace Globomantics.Services
             return GetCDRates().FirstOrDefault(x => x.TermLength == term).Value;
         }
 
+        public List<Rate> GetAutoLoanRates()
+        {
+            throw new TimeoutException();
+        }
     }
 }

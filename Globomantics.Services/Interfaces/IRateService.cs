@@ -1,6 +1,5 @@
 ﻿using Globomantics.Core.Models;
 using System.Collections.Generic;
-using static Globomantics.Services.RateService;
 
 namespace Globomantics.Services
 {
@@ -13,5 +12,6 @@ namespace Globomantics.Services
         List<CDRate> GetCDRates();
 
         double GetCDRateByTerm(CDTermLength term);
+        List<Rate> GetAutoLoanRates();
     }
 }
