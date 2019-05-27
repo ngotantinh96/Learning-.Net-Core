@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Globomantics.Models
 {
-    public class Employment
+    public class Employment : IValidatableObject
     {
         [Required(ErrorMessage = "Current employment type required")]
         public string CurrentType { get; set; }
@@ -21,5 +18,21 @@ namespace Globomantics.Models
         public string PreviousEmployerName { get; set; }
         public double? PreviousAnnualIncome { get; set; }
         public double? PreviousDuration { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var errors = new List<ValidationResult>();
+            if (CurrentDuration < 2)
+            {
+                if (string.IsNullOrEmpty(PreviousType)
+                    || string.IsNullOrEmpty(PreviousEmployerName)
+                    || PreviousDuration == null)
+                {
+                    errors.Add(new ValidationResult("Previous Employment Information Required!"));
+                }
+            }
+
+            return errors;
+        }
     }
 }
