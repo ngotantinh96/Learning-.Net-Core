@@ -14,22 +14,7 @@
             <cdrate title="24 Month CD" term-length="Months24" meter-percent="100"></cdrate>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title">Mortgage Rates</h3>
-                    <p class="card-text">The lowest rates - guaranteed.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    @foreach (var mortRate in Model.MortgageRates)
-                    {
-                        <li class="list-group-item">@mortRate.Title: @mortRate.Value%</li>
-                    }
-                </ul>
-                <div class="card-body">
-                    <p>Yes, we do 0% down mortgages.</p>
-                    <a href="#" class="card-link">Learn More</a>
-                </div>
-            </div>
+            @await Component.InvokeAsync("MortgageRates");
         </div>
         <div class="col-md-4">
             <div class="card">
