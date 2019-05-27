@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace Globomantics.Core.Validation
 {
@@ -9,7 +11,8 @@ namespace Globomantics.Core.Validation
 
         public override bool IsValid(object value)
         {
-            if (value != null && DateTime.TryParse(value.ToString(), out DateTime dob))
+            DateTime dob;
+            if (value != null && DateTime.TryParse(value.ToString(), out dob))
             {
                 if (dob.AddYears(Age) <= DateTime.Now)
                 {
