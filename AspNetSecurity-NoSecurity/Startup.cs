@@ -37,6 +37,13 @@ namespace AspNetSecurity_NoSecurity
             loggerFactory.AddConsole();
 #pragma warning restore CS0618 // Type or member is obsolete
 
+            app.UseCsp(
+                options => options
+                .DefaultSources(s => s.Self())
+                .StyleSources(s => s.Self().CustomSources("maxcdn.bootstrapcdn.com"))
+                .ReportUris(r => r.Uris("/report"))
+            );
+
             app.UseHsts(h => h.MaxAge(days: 365).IncludeSubdomains().Preload());
 
             app.UseDeveloperExceptionPage();
