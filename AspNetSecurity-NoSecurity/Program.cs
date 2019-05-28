@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore;
 
-namespace AspNetSecurity_NoSecurity
+namespace AspNetSecurityNoSecurity
 {
     public class Program
     {

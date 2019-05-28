@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AspNetSecurity_NoSecurity.Models
+namespace AspNetSecurityNoSecurity.Models
 {
     public class ConferenceModel
     {

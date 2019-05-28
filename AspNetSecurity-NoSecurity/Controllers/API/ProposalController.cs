@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using AspNetSecurity_NoSecurity.Models;
-using AspNetSecurity_NoSecurity.Repositories;
+using AspNetSecurityNoSecurity.Models;
+using AspNetSecurityNoSecurity.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetSecurity_NoSecurity.Controllers.API
+namespace AspNetSecurityNoSecurity.Controllers.API
 {
     [Route("api/[controller]")]
     public class ProposalController

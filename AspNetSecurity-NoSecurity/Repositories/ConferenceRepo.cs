@@ -1,11 +1,11 @@
-﻿using AspNetSecurity_NoSecurity.Models;
-using AspNetSecurityNoSecurity;
+﻿using AspNetSecurityNoSecurity;
+using AspNetSecurityNoSecurity.Models;
 using Microsoft.AspNetCore.DataProtection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AspNetSecurity_NoSecurity.Repositories
+namespace AspNetSecurityNoSecurity.Repositories
 {
     public class ConferenceRepo
     {

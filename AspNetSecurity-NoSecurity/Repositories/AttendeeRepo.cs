@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AspNetSecurity_NoSecurity.Models;
+using AspNetSecurityNoSecurity.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetSecurity_NoSecurity.Repositories
+namespace AspNetSecurityNoSecurity.Repositories
 {
     public class AttendeeRepo
     {

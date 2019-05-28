@@ -1,4 +1,4 @@
-﻿namespace AspNetSecurityNoSecurity.Models
+﻿namespace AspNetSecurity_NoSecurity.Models
 {
     public class ProposalModel
     {

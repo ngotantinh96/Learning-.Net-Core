@@ -1,8 +1,8 @@
-﻿using AspNetSecurity_NoSecurity.Models;
-using AspNetSecurity_NoSecurity.Repositories;
+﻿using AspNetSecurityNoSecurity.Models;
+using AspNetSecurityNoSecurity.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetSecurity_NoSecurity.Controllers
+namespace AspNetSecurityNoSecurity.Controllers
 {
     [Route("api/[controller]")]
     public class AttendeeController: Controller

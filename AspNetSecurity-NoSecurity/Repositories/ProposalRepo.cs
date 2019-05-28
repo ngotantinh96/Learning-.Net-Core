@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AspNetSecurity_NoSecurity.Models;
+using AspNetSecurityNoSecurity.Models;
 
-namespace AspNetSecurity_NoSecurity.Repositories
+namespace AspNetSecurityNoSecurity.Repositories
 {  
     public class ProposalRepo
     {

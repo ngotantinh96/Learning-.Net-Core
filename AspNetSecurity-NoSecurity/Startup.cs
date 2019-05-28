@@ -1,20 +1,25 @@
-﻿using AspNetSecurity_NoSecurity.Repositories;
-using AspNetSecurityNoSecurity;
+﻿using AspNetSecurityNoSecurity.Data;
+using AspNetSecurityNoSecurity.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace AspNetSecurity_NoSecurity
+namespace AspNetSecurityNoSecurity
 {
     public class Startup
     {
         private readonly IHostingEnvironment environment;
+        private readonly IConfiguration config;
 
-        public Startup(IHostingEnvironment environment)
+        public Startup(IHostingEnvironment environment, IConfiguration config)
         {
             this.environment = environment;
+            this.config = config;
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -30,6 +35,12 @@ namespace AspNetSecurity_NoSecurity
             services.AddSingleton<ProposalRepo>();
             services.AddSingleton<AttendeeRepo>();
             services.AddSingleton<PurposeStringConstants>();
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(config.GetConnectionString("ConfArchConnection")));
+
+            services.AddIdentity<ConfArchUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +66,8 @@ namespace AspNetSecurity_NoSecurity
             app.UseDeveloperExceptionPage();
 
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseCors(x => x.AllowAnyOrigin());
 
