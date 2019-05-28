@@ -44,7 +44,11 @@ namespace AspNetSecurity_NoSecurity
                 .ReportUris(r => r.Uris("/report"))
             );
 
-            app.UseHsts(h => h.MaxAge(days: 365).IncludeSubdomains().Preload());
+            app.UseXfo(o => o.Deny());
+
+            if (!environment.IsDevelopment())
+                app.UseHsts(h => h.MaxAge(days: 365).IncludeSubdomains().Preload());
+
 
             app.UseDeveloperExceptionPage();
 
