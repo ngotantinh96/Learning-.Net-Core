@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetSecurity_NoSecurity.Controllers
 {
-    public class ConferenceController: Controller
+    public class ConferenceController : Controller
     {
         private readonly ConferenceRepo repo;
 
@@ -25,7 +25,7 @@ namespace AspNetSecurity_NoSecurity.Controllers
         }
 
         [HttpPost]
-        []
+        [ValidateAntiForgeryToken]
         public IActionResult Add(ConferenceModel model)
         {
             if (ModelState.IsValid)
