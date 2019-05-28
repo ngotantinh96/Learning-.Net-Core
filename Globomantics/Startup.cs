@@ -1,9 +1,18 @@
-﻿using Globomantics.Binders;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using Globomantics.Binders;
+using Globomantics.Constraints;
+using Globomantics.Conventions;
 using Globomantics.Filters;
+using Globomantics.Middleware;
 using Globomantics.Services;
 using Globomantics.Theme;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +37,7 @@ namespace Globomantics
             {
                 options.Filters.Add(typeof(ModelValidationFilter));
                 options.ModelBinderProviders.Insert(0, new SurveyBinderProvider());
+                options.Conventions.Add(new APIConvention());
             });
             services.AddScoped<IDocumentService, DocumentService>();
             services.AddSingleton<ILoanService, LoanService>();
@@ -37,6 +47,11 @@ namespace Globomantics
             services.Configure<IConfiguration>(Configuration);
             services.Configure<RazorViewEngineOptions>(
                 options => options.ViewLocationExpanders.Add(new ThemeExpander())
+            );
+            services.Configure<RouteOptions>(options => {
+                options.ConstraintMap.Add("tokenCheck", typeof(TokenConstraint));
+                options.ConstraintMap.Add("versionCheck", typeof(RouteVersionConstraint));
+                }
             );
 
             services.AddDistributedMemoryCache();
@@ -63,7 +78,6 @@ namespace Globomantics
             }
 
             app.UseStaticFiles();
-
             app.UseSession();
             app.UseMvc(routes =>
             {
