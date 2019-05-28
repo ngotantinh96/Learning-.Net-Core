@@ -53,6 +53,9 @@ namespace AspNetSecurity_NoSecurity
             app.UseDeveloperExceptionPage();
 
             app.UseStaticFiles();
+
+            app.UseCors(x => x.AllowAnyOrigin());
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
