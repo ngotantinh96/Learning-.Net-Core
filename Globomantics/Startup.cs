@@ -5,6 +5,7 @@ using Globomantics.Theme;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -34,7 +35,6 @@ namespace Globomantics
             services.AddScoped<IFeatureService, FeatureService>();
             services.AddScoped<IRateService, RateService>();
             services.Configure<IConfiguration>(Configuration);
-
             services.Configure<RazorViewEngineOptions>(
                 options => options.ViewLocationExpanders.Add(new ThemeExpander())
             );

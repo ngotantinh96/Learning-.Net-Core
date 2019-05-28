@@ -8,6 +8,8 @@ namespace Globomantics.Services
     {
         List<Rate> GetMortgageRates();
 
+        List<MortgageRateDetails> GetMortgageRateDetails();
+
         List<Rate> GetCreditCardRates();
 
         List<CDRate> GetCDRates();
