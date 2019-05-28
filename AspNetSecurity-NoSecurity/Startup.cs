@@ -1,4 +1,5 @@
 ﻿using AspNetSecurity_NoSecurity.Repositories;
+using AspNetSecurityNoSecurity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,7 @@ namespace AspNetSecurity_NoSecurity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            services.AddDataProtection();
             //if (!environment.IsDevelopment())
             services.Configure<MvcOptions>(
                 options => options.Filters.Add(new RequireHttpsAttribute())
@@ -28,6 +29,7 @@ namespace AspNetSecurity_NoSecurity
             services.AddSingleton<ConferenceRepo>();
             services.AddSingleton<ProposalRepo>();
             services.AddSingleton<AttendeeRepo>();
+            services.AddSingleton<PurposeStringConstants>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

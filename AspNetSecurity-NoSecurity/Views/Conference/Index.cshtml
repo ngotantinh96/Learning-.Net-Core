@@ -19,7 +19,7 @@
                     <td>@conference.Start.ToString("ddd d MMM")</td>
                     <td>@AttendeeRepo.GetAttendeesTotal(conference.Id)</td>
                     <td>
-                        <a asp-controller="Proposal" asp-action="Index" asp-route-conferenceId="@conference.Id">Proposals</a>
+                        <a asp-controller="Proposal" asp-action="Index" asp-route-conferenceId="@conference.EncyptedId">Proposals</a>
                     </td>
                 </tr>
             }
