@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globomantics.Core", "Globom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globomantics.Services", "Globomantics.Services\Globomantics.Services.csproj", "{D89A26F8-D5A4-4205-8AA5-ACEF48B457A6}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetSecurity-NoSecurity", "AspNetSecurity-NoSecurity\AspNetSecurity-NoSecurity.csproj", "{785FECB5-3DFB-4A3A-B33C-5E9B0D64FE0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{D89A26F8-D5A4-4205-8AA5-ACEF48B457A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D89A26F8-D5A4-4205-8AA5-ACEF48B457A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D89A26F8-D5A4-4205-8AA5-ACEF48B457A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{785FECB5-3DFB-4A3A-B33C-5E9B0D64FE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{785FECB5-3DFB-4A3A-B33C-5E9B0D64FE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{785FECB5-3DFB-4A3A-B33C-5E9B0D64FE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{785FECB5-3DFB-4A3A-B33C-5E9B0D64FE0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
