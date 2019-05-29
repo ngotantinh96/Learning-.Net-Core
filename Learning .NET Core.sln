@@ -51,6 +51,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetSecurity-m4-Shared", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickstartIdentityServer", "QuickstartIdentityServer\QuickstartIdentityServer.csproj", "{FB3227EC-CDB4-4DAC-8F71-E814D5363905}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppTagHelper", "WebAppTagHelper\WebAppTagHelper.csproj", "{6EA3B39B-0AE4-4833-BF0E-840A136524AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{FB3227EC-CDB4-4DAC-8F71-E814D5363905}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB3227EC-CDB4-4DAC-8F71-E814D5363905}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB3227EC-CDB4-4DAC-8F71-E814D5363905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EA3B39B-0AE4-4833-BF0E-840A136524AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EA3B39B-0AE4-4833-BF0E-840A136524AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EA3B39B-0AE4-4833-BF0E-840A136524AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EA3B39B-0AE4-4833-BF0E-840A136524AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
