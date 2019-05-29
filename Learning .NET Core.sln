@@ -43,6 +43,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetSecurity-NoSecurity",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity", "Identity\Identity.csproj", "{1321CB8C-814E-4FCB-BD0D-9214F5684407}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetSecurity-m4", "AspNetSecurity-m4\AspNetSecurity-m4.csproj", "{8072BA30-31C9-45F6-9889-9AD25CD6F2B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetSecurity-m4-Api", "AspNetSecurity-m4-Api\AspNetSecurity-m4-Api.csproj", "{74568F68-D125-4E8C-89BE-8AD3887C31C4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetSecurity-m4-Shared", "AspNetSecurity-m4-Shared\AspNetSecurity-m4-Shared.csproj", "{37645486-0F1F-41B0-ACA0-9DB7E0BBF3B9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickstartIdentityServer", "QuickstartIdentityServer\QuickstartIdentityServer.csproj", "{FB3227EC-CDB4-4DAC-8F71-E814D5363905}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +137,22 @@ Global
 		{1321CB8C-814E-4FCB-BD0D-9214F5684407}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1321CB8C-814E-4FCB-BD0D-9214F5684407}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1321CB8C-814E-4FCB-BD0D-9214F5684407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8072BA30-31C9-45F6-9889-9AD25CD6F2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8072BA30-31C9-45F6-9889-9AD25CD6F2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8072BA30-31C9-45F6-9889-9AD25CD6F2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8072BA30-31C9-45F6-9889-9AD25CD6F2B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74568F68-D125-4E8C-89BE-8AD3887C31C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74568F68-D125-4E8C-89BE-8AD3887C31C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74568F68-D125-4E8C-89BE-8AD3887C31C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74568F68-D125-4E8C-89BE-8AD3887C31C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37645486-0F1F-41B0-ACA0-9DB7E0BBF3B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37645486-0F1F-41B0-ACA0-9DB7E0BBF3B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37645486-0F1F-41B0-ACA0-9DB7E0BBF3B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37645486-0F1F-41B0-ACA0-9DB7E0BBF3B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB3227EC-CDB4-4DAC-8F71-E814D5363905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB3227EC-CDB4-4DAC-8F71-E814D5363905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB3227EC-CDB4-4DAC-8F71-E814D5363905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB3227EC-CDB4-4DAC-8F71-E814D5363905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
