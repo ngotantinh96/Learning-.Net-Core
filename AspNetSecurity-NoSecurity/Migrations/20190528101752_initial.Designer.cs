@@ -11,7 +11,7 @@ namespace AspNetSecurityNoSecurity.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20190528101752_initial")]
-    partial class initial
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -36,7 +36,7 @@ namespace AspNetSecurityNoSecurity.Controllers
             if (!ModelState.IsValid)
                 return View("Error");
 
-            var user = new ConfArchUser { UserName = model.Email, Email = model.Email };
+            var user = new ConfArchUser { UserName = model.Email, Email = model.Email, BirthDate = model.BirthDate };
 
             var result = await userManager.CreateAsync(user, model.Password);
 

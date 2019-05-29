@@ -1,5 +1,6 @@
 ﻿using AspNetSecurityNoSecurity.Data;
 using AspNetSecurityNoSecurity.Repositories;
+using AspNetSecurityNoSecurity.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -40,7 +41,10 @@ namespace AspNetSecurityNoSecurity
                 options.UseSqlServer(config.GetConnectionString("ConfArchConnection")));
 
             services.AddIdentity<ConfArchUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddTransient<IUserClaimsPrincipalFactory<ConfArchUser>, ConfArchUserClaimsPrincipalFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

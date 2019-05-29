@@ -9,5 +9,7 @@ namespace AspNetSecurityNoSecurity.Data
             : base(options)
         {
         }
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AspNetSecurityNoSecurity.Models
 {
@@ -26,7 +27,7 @@ namespace AspNetSecurityNoSecurity.Models
         [Display(Name = "Preferred technology")]
         public string Technology { get; set; }
 
-        //[Display(Name = "Birth date")]
-        //public DateTime BirthDate { get; set; }
+        [Display(Name = "Birth date")]
+        public DateTime BirthDate { get; set; }
     }
 }
