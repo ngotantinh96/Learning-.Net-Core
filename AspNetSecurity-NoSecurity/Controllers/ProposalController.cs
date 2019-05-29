@@ -1,11 +1,12 @@
 ﻿using AspNetSecurityNoSecurity.Models;
 using AspNetSecurityNoSecurity.Repositories;
-using AspNetSecurityNoSecurity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetSecurityNoSecurity.Controllers
 {
+    [Authorize]
     public class ProposalController : Controller
     {
         private readonly ConferenceRepo conferenceRepo;

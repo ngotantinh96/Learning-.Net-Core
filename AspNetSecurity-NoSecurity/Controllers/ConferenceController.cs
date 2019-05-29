@@ -1,9 +1,11 @@
 ﻿using AspNetSecurityNoSecurity.Models;
 using AspNetSecurityNoSecurity.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetSecurityNoSecurity.Controllers
 {
+    [Authorize]
     public class ConferenceController : Controller
     {
         private readonly ConferenceRepo repo;
