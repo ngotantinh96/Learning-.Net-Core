@@ -2,6 +2,7 @@
 using AspNetSecurityNoSecurity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace AspNetSecurityNoSecurity.Controllers
@@ -10,11 +11,17 @@ namespace AspNetSecurityNoSecurity.Controllers
     {
         private readonly UserManager<ConfArchUser> userManager;
         private readonly SignInManager<ConfArchUser> signInManager;
+        private readonly RoleManager<IdentityRole> roleManager;
 
-        public AccountController(UserManager<ConfArchUser> userManager, SignInManager<ConfArchUser> signInManager)
+        public AccountController(
+            UserManager<ConfArchUser> userManager,
+            SignInManager<ConfArchUser> signInManager,
+            RoleManager<IdentityRole> roleManager
+            )
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
+            this.roleManager = roleManager;
         }
 
         [HttpGet]
@@ -29,8 +36,18 @@ namespace AspNetSecurityNoSecurity.Controllers
             if (!ModelState.IsValid)
                 return View("Error");
 
-            var result = await userManager.CreateAsync(
-                new ConfArchUser { UserName = model.Email, Email = model.Email }, model.Password);
+            var user = new ConfArchUser { UserName = model.Email, Email = model.Email };
+
+            var result = await userManager.CreateAsync(user, model.Password);
+
+            if (!await roleManager.RoleExistsAsync("Organizer"))
+                await roleManager.CreateAsync(new IdentityRole { Name = "Organizer" });
+
+            if (!await roleManager.RoleExistsAsync("Speaker"))
+                await roleManager.CreateAsync(new IdentityRole { Name = "Speaker" });
+
+            await userManager.AddToRoleAsync(user, model.Role);
+            await userManager.AddClaimAsync(user, new Claim("technology", model.Technology));
 
             if (result.Succeeded)
                 return View("RegistrationConfirmation");
