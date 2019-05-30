@@ -1,42 +1,6 @@
 ﻿@model WebAppTagHelper.Models.ModelAddress
 
 <h1>
-    <mod-test helper-for="FirstName"></mod-test>
+    <mod-test hel="FirstName"></mod-test>
 </h1>
 
-<form asp-controller="Home"
-      asp-action="Register" method="post">
-
-    <label asp-for="FirstName"></label>
-    <input asp-for="FirstName" /><br />
-
-    <label asp-for="LastName"></label>
-    <input asp-for="LastName" /><br />
-
-    @* Submit Button, Other Fields,...*@
-
-</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*<mod-test first-name="Peter" last-name="Kellner"></mod-test>
-    <hr/>
-    <mod-exp helper-for="FirstName"></mod-exp>
-    <hr/>
-    <view-ctx misc-string="@ViewContext.ExecutingFilePath"></view-ctx>*@
